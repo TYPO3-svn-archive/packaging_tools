@@ -8,7 +8,7 @@ include /usr/share/dpatch/dpatch.make
 SHORTNAME=dummy
 PACKAGENAME=typo3-$(SHORTNAME)
 # set link to the typo3 source dir
-T3PACKAGENAME=typo3_src-4.0
+T3PACKAGENAME=typo3_src-4.1
 
 INSTALLDIR=debian/$(PACKAGENAME)
 DBSRCDIR=usr/share/$(PACKAGENAME)
@@ -39,9 +39,6 @@ install: build
 	dh_install typo3conf/ $(DOCROOTDIR)
 	dh_install typo3conf/localconf.php $(ETCDIR)
 	dh_install debian/apache.conf $(ETCDIR)
-#	cp mysql.sql debian/db-test-mysql/usr/share/dbconfig-common/data/db-test-mysql/install/mysql
-# and the upgrade file goes here:
-#	cp mysql-upgrade_2.1.sql debian/db-test-mysql/usr/share/dbconfig-common/data/db-test-mysql/upgrade/mysql/2.1
 
 # Build architecture-independent files here.
 binary-indep: build install

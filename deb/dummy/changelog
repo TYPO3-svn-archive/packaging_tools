@@ -1,3 +1,22 @@
+typo3-dummy (4.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Welzel <gawain@camlann.de>  Wed, 04 Apr 2007 14:00:00 +0100
+
+typo3-dummy (4.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Welzel <gawain@camlann.de>  Tue, 20 Mar 2007 09:00:00 +0100
+
+typo3-dummy (4.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Rewritten description of package in control file.
+
+ -- Christian Welzel <gawain@camlann.de>  Thu, 22 Feb 2007 21:00:41 +0100
+
 typo3-dummy (4.0.4-2) unstable; urgency=low
 
   * Fixed sendmail_path in apache.conf

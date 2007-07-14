@@ -7,13 +7,15 @@ Standards-Version: 3.7.2
 
 Package: typo3-dummy
 Architecture: all
-Depends: typo3-src-4.0
+Depends: typo3-src-4.0 | typo3-src-4.1
 Description: Empty TYPO3 site package for starting a new site from scratch
- This package provides an empty database to start a new and clean  content
- management system. It contains TYPO3's core files and a database file with a
- clean pagetree. Beginners should start with the database and pagetree provided
- by typo3-quickstart or typo3-testsite. All the TYPO3 packages can be installed
- and used side by side.
+ This package provides an empty directory structure to start a new and clean
+ website based on TYPO3. This includes a default configuration and some scripts
+ to register the site in apache.
+ .
+ NOTE: This package is intended for single vhost installations. TYPO3 can be
+ configured to work with several vhosts and a single src-dir but this package
+ can not handle this for you!
  .
  TYPO3 is a Web content management system which features automatic creation of
  navigational menus, headlines, and other dynamic graphical elements, automatic
