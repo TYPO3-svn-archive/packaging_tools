@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: typo3
 Architecture: all
-Depends: exim4 | mail-transport-agent, graphicsmagick, php4-gd | php5-gd, typo3-dummy, typo3-src-4.0
+Depends: exim4 | mail-transport-agent, graphicsmagick, php4-gd | php5-gd, typo3-dummy, typo3-src-4.0 | typo3-src-4.1
 Recommends: mysql-server, gs
 Suggests: catdoc, httrack, ppthtml, unrtf, webhttrack, xpdf-utils, xlhtml
 Description: Powerful content management framework (Meta package)
@@ -28,7 +28,7 @@ Description: Powerful content management framework (Meta package)
  .
   Homepage: <http://www.typo3.com/>
 
-Package: typo3-src-4.0
+Package: typo3-src-4.1
 Architecture: all
 Depends: ttf-bitstream-vera, libapache2-mod-php4 | libapache-mod-php4 | libapache2-mod-php5 | libapache-mod-php5 | php4-cgi | php5-cgi, php4-cli | php5-cli
 Recommends: catdoc, exim4 | mail-transport-agent, graphicsmagick, gs, mysql-server, php4-gd | php5-gd, php4-mysql | php5-mysql, php4-xcache | php5-xcache, typo3-dummy, xpdf-utils

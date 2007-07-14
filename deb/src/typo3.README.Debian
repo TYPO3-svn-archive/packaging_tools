@@ -8,7 +8,7 @@ the provided Debian packages:
 
 1 Install typo3-dummy 
 
-2 Check that the PHP itself and the extensions gd und mysql are enabled.
+2 Check that the PHP itself and the extensions gd and mysql are enabled.
 
   To load php_mod check that the following symlinks are set:
 
@@ -24,6 +24,10 @@ the provided Debian packages:
   extension=gd.so
   extension=mysql.so
 
+  Please note: newer versions of php packages in debian handle the addition
+  of modules through the directory /etc/php{4,5}/conf.d. So make sure, gd.ini
+  and mysql.ini are in that directory if you cannot find the above two lines
+  in your php.ini.
 
 3 Enabling the webserver to use the provided directories.
 
@@ -56,7 +60,7 @@ the provided Debian packages:
 4 Fix permissions
 
   The provided example configuration for the apache uses the PHP safe
-  mode. Therefor it is necessary to change the owner chip of the used
+  mode. Therefor it is necessary to change the ownership of the used
   files to WWWUSER/WWWGROUP.  In Debian standard configuration these
   are set to www-data/www-data.
 
@@ -128,7 +132,7 @@ Here are some typical pitfalls:
     the source directory, e.g.
 
     # file /var/lib/typo3-dummy/typo3_src
-    /var/lib/typo3-dummy/typo3_src:       symlink to `/usr/share/typo3/typo3_src-4.0'
+    /var/lib/typo3-dummy/typo3_src:       symlink to `/usr/share/typo3/typo3_src-4.1'
 
 3 - The EM displays a blank page or does not import new extensions
 

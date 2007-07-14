@@ -1,3 +1,25 @@
+typo3-src (4.1.1+debian-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes problem with rtehtmlarea and Mozilla Firefox 2.0.0.3
+
+ -- Christian Welzel <gawain@camlann.de>  Wed, 04 Apr 2007 14:00:00 +0100
+
+typo3-src (4.1.0+debian-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christian Welzel <gawain@camlann.de>  Tue, 20 Mar 2007 09:00:00 +0100
+
+typo3-src (4.0.5+debian-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes "TYPO3 Security Bulletin TYPO3-20070221-1: Email header injection"
+  * Removed t3lib_div-PHP52.dpatch (now integrated by upstream)
+  * Fixed typo and added note to typo3.README.Debian (Closes: 405577) 
+
+ -- Christian Welzel <gawain@camlann.de>  Thu, 22 Feb 2007 21:00:00 +0100
+
 typo3-src (4.0.4+debian-2) unstable; urgency=low
 
   * Added t3lib_div-PHP52.dpatch to fix crash of PHP 5.2.0
