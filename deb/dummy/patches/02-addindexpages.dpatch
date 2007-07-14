@@ -1,0 +1,181 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+## 02-addindexpages.dpatch by Christian Welzel <gawain@camlann.de>
+##
+## DP: add some missing html pages to protect against directory listing
+
+@DPATCH@
+
+diff -Naur dummy-4.0.2/fileadmin/index.html typo3-dummy-4.0.3/fileadmin/index.html
+--- typo3-dummy-4.0.2.orig/fileadmin/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/fileadmin/index.html	2006-11-24 15:48:12.340252856 +0100
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/fileadmin/_temp_/index.html typo3-dummy-4.0.2/fileadmin/_temp_/index.html
+--- typo3-dummy-4.0.2.orig/fileadmin/_temp_/index.html	2006-09-11 09:18:23.000000000 +0200
++++ typo3-dummy-4.0.2/fileadmin/_temp_/index.html	2006-11-24 15:48:27.408864609 +0100
+@@ -4,4 +4,4 @@
+ 	<TITLE></TITLE>
+ <META http-equiv=Refresh Content="0; Url=/">
+ </HEAD>
+-</HTML>
+\ Kein Zeilenumbruch am Dateiende.
++</HTML>
+diff -Naur dummy-4.0.2/fileadmin/user_upload/index.html typo3-dummy-4.0.2/fileadmin/user_upload/index.html
+--- typo3-dummy-4.0.2.orig/fileadmin/user_upload/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/fileadmin/user_upload/index.html	2006-11-24 15:48:17.484461700 +0100
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/fileadmin/user_upload/_temp_/index.html typo3-dummy-4.0.2/fileadmin/user_upload/_temp_/index.html
+--- typo3-dummy-4.0.2.orig/fileadmin/user_upload/_temp_/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/fileadmin/user_upload/_temp_/index.html	2006-09-19 21:19:05.612046750 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3conf/ext/index.html typo3-dummy-4.0.2/typo3conf/ext/index.html
+--- typo3-dummy-4.0.2.orig/typo3conf/ext/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3conf/ext/index.html	2006-09-19 21:19:20.856999500 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3conf/l10n/index.html typo3-dummy-4.0.2/typo3conf/l10n/index.html
+--- typo3-dummy-4.0.2.orig/typo3conf/l10n/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3conf/l10n/index.html	2006-09-19 21:19:26.445348750 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/cs/index.html typo3-dummy-4.0.2/typo3temp/cs/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/cs/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/cs/index.html	2006-09-19 21:19:33.000000000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/GB/index.html typo3-dummy-4.0.2/typo3temp/GB/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/GB/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/GB/index.html	2006-09-19 21:19:33.000000000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/index.html typo3-dummy-4.0.2/typo3temp/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/index.html	2006-09-19 21:19:33.233773000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/llxml/index.html typo3-dummy-4.0.2/typo3temp/llxml/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/llxml/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/llxml/index.html	2006-09-19 21:19:33.000000000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/pics/index.html typo3-dummy-4.0.2/typo3temp/pics/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/pics/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/pics/index.html	2006-09-19 21:19:33.000000000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/typo3temp/temp/index.html typo3-dummy-4.0.2/typo3temp/temp/index.html
+--- typo3-dummy-4.0.2.orig/typo3temp/temp/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/typo3temp/temp/index.html	2006-09-19 21:19:33.000000000 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/uploads/index.html typo3-dummy-4.0.2/uploads/index.html
+--- typo3-dummy-4.0.2.orig/uploads/index.html	2006-09-11 09:18:23.000000000 +0200
++++ typo3-dummy-4.0.2/uploads/index.html	2006-09-19 21:20:44.566231000 +0200
+@@ -4,4 +4,4 @@
+ 	<TITLE></TITLE>
+ <META http-equiv=Refresh Content="0; Url=../">
+ </HEAD>
+-</HTML>
+\ Kein Zeilenumbruch am Dateiende.
++</HTML>
+diff -Naur dummy-4.0.2/uploads/media/index.html typo3-dummy-4.0.2/uploads/media/index.html
+--- typo3-dummy-4.0.2.orig/uploads/media/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/uploads/media/index.html	2006-09-19 21:19:40.206208750 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/uploads/pics/index.html typo3-dummy-4.0.2/uploads/pics/index.html
+--- typo3-dummy-4.0.2.orig/uploads/pics/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/uploads/pics/index.html	2006-09-19 21:19:45.086513750 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>
+diff -Naur dummy-4.0.2/uploads/tf/index.html typo3-dummy-4.0.2/uploads/tf/index.html
+--- typo3-dummy-4.0.2.orig/uploads/tf/index.html	1970-01-01 01:00:00.000000000 +0100
++++ typo3-dummy-4.0.2/uploads/tf/index.html	2006-09-19 21:19:49.958818250 +0200
+@@ -0,0 +1,7 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
++<HTML>
++<HEAD>
++	<TITLE></TITLE>
++<META http-equiv=Refresh Content="0; Url=/">
++</HEAD>
++</HTML>

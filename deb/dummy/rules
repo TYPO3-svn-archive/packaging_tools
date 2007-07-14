@@ -1,0 +1,76 @@
+#!/usr/bin/make -f
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpatch/dpatch.make
+
+SHORTNAME=dummy
+PACKAGENAME=typo3-$(SHORTNAME)
+# set link to the typo3 source dir
+T3PACKAGENAME=typo3_src-4.0
+
+INSTALLDIR=debian/$(PACKAGENAME)
+DBSRCDIR=usr/share/$(PACKAGENAME)
+DOCROOTDIR=var/lib/$(PACKAGENAME)
+ETCDIR=etc/$(PACKAGENAME)
+
+build: build-stamp
+
+build-stamp: patch-stamp
+	dh_testdir
+	touch build-stamp
+
+clean: unpatch
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs $(DOCROOTDIR) $(ETCDIR)
+	dh_install index.php clear.gif $(DOCROOTDIR)
+	dh_install fileadmin/ $(DOCROOTDIR)
+	dh_install typo3temp/ $(DOCROOTDIR)
+	dh_install uploads/ $(DOCROOTDIR)
+	dh_install typo3conf/ $(DOCROOTDIR)
+	dh_install typo3conf/localconf.php $(ETCDIR)
+	dh_install debian/apache.conf $(ETCDIR)
+#	cp mysql.sql debian/db-test-mysql/usr/share/dbconfig-common/data/db-test-mysql/install/mysql
+# and the upgrade file goes here:
+#	cp mysql-upgrade_2.1.sql debian/db-test-mysql/usr/share/dbconfig-common/data/db-test-mysql/upgrade/mysql/2.1
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
+	dh_installchangelogs
+	dh_installdocs RELEASE_NOTES.txt README.txt --exclude INSTALL.txt
+	dh_installexamples _.htaccess
+	dh_link \
+		$(DOCROOTDIR)/typo3_src/t3lib $(DOCROOTDIR)/t3lib \
+		$(DOCROOTDIR)/typo3_src/typo3 $(DOCROOTDIR)/typo3 \
+		usr/share/typo3/$(T3PACKAGENAME) $(DOCROOTDIR)/typo3_src \
+		$(ETCDIR)/localconf.php $(DOCROOTDIR)/typo3conf/localconf.php \
+		/usr/bin/convert  $(DOCROOTDIR)/execdir/convert \
+		/usr/bin/composite  $(DOCROOTDIR)/execdir/composite \
+		/usr/bin/identify  $(DOCROOTDIR)/execdir/identify \
+		/usr/bin/gm  $(DOCROOTDIR)/execdir/gm \
+		/usr/sbin/sendmail  $(DOCROOTDIR)/execdir/sendmail
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

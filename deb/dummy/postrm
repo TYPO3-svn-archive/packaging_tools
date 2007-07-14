@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+PACKAGE=typo3-dummy
+
+if [ -f /usr/share/debconf/confmodule ]; then
+    . /usr/share/debconf/confmodule
+fi
+
+case "$1" in "remove"|"purge" )
+
+	for webserver in apache apache-perl apache-ssl apache2; do
+		if [ -d /etc/$webserver/conf.d -a -f /etc/$webserver/conf.d/typo3-dummy.conf -a -h /etc/$webserver/conf.d/typo3-dummy.conf ]; then
+			rm -f /etc/$webserver/conf.d/typo3-dummy.conf
+		fi
+	done
+
+	if [ -f /usr/share/dbconfig-common/dpkg/postrm.mysql ]; then
+		. /usr/share/dbconfig-common/dpkg/postrm.mysql
+		dbc_go typo3-dummy $@
+	fi
+
+	if [ "$1" = "purge" ]; then
+        rm -f /etc/typo3-dummy/debian-db.php
+        if which ucf >/dev/null 2>&1; then
+                ucf --purge /etc/typo3-dummy/debian-db.php
+        fi
+	fi
+	;;
+
+esac
+
+#DEBHELPER#
+
+exit 0

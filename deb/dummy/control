@@ -1,0 +1,29 @@
+Source: typo3-dummy
+Section: web
+Priority: optional
+Maintainer: Christian Welzel <gawain@camlann.de>
+Build-Depends: debhelper (>= 4), dpatch
+Standards-Version: 3.7.2
+
+Package: typo3-dummy
+Architecture: all
+Depends: typo3-src-4.0
+Description: Empty TYPO3 site package for starting a new site from scratch
+ This package provides an empty database to start a new and clean  content
+ management system. It contains TYPO3's core files and a database file with a
+ clean pagetree. Beginners should start with the database and pagetree provided
+ by typo3-quickstart or typo3-testsite. All the TYPO3 packages can be installed
+ and used side by side.
+ .
+ TYPO3 is a Web content management system which features automatic creation of
+ navigational menus, headlines, and other dynamic graphical elements, automatic
+ conversion and scaling of images, the ability to present different templates
+ based on variables such as client browser or country code, support for multiple
+ templates on a site, and a built-in password-protection option.
+ .
+ Pages can be timed to be shown on a certain date, be hidden on a certain date
+ or just temporarily hidden. TYPO3 supports search in SQL-databases and
+ redesigning of a website at once is just a matter of creating a single new
+ template.
+ .
+  Homepage: <http://www.typo3.com/>
