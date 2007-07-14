@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+PACKAGE=typo3-dummy
+
+case "$1" in "remove"|"purge" )
+
+	for webserver in apache apache-perl apache-ssl apache2; do
+		if [ -d /etc/$webserver/conf.d -a -f /etc/$webserver/conf.d/typo3-dummy.conf -a -h /etc/$webserver/conf.d/typo3-dummy.conf ]; then
+			rm -f /etc/$webserver/conf.d/typo3-dummy.conf
+		fi
+	done
+	;;
+
+esac
+
+#DEBHELPER#
+
+exit 0
