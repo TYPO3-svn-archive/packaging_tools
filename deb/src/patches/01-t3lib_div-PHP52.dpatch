@@ -1,0 +1,20 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+## 01-t3lib_div-PHP52.dpatch by Christian Welzel <gawain@camlann.de>
+##
+## DP: fix a crash of PHP 5.2.0 if first argument of strcspn() is empty
+
+@DPATCH@
+
+diff -Naur typo3_src-4.0.4/t3lib/class.t3lib_div.php typo3_src-4.0.4_new/t3lib/class.t3lib_div.php
+--- typo3_src-4.0.4/t3lib/class.t3lib_div.php	2006-12-20 13:38:16.000000000 +0100
++++ typo3_src-4.0.4_new/t3lib/class.t3lib_div.php	2006-12-22 11:43:36.742152204 +0100
+@@ -2081,7 +2081,8 @@
+ 				} else {	// Just a value:
+ 
+ 						// Look for binary chars:
+-					if (strcspn($v,$binaryChars) != strlen($v))	{	// Go for base64 encoding if the initial segment NOT matching any binary char has the same length as the whole string!
++					$vLen = strlen($v);	// check for length, because PHP 5.2.0 crashes when first argument of strcspn is empty
++					if ($vLen && strcspn($v,$binaryChars) != $vLen)	{	// Go for base64 encoding if the initial segment NOT matching any binary char has the same length as the whole string!
+ 							// If the value contained binary chars then we base64-encode it an set an attribute to notify this situation:
+ 						$content = chr(10).chunk_split(base64_encode($v));
+ 						$attr.=' base64="1"';
