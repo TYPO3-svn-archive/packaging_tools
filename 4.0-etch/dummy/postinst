@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+PACKAGE=typo3-dummy
+T3CONFDIR=/var/lib/$PACKAGE/typo3conf
+
+if [ "$1" = "configure" ] ; then
+    if [ -d $T3CONFDIR ] ; then
+        rm -f $T3CONFDIR/temp_CACHED*
+    fi
+	chown -hR www-data:www-data /var/lib/$PACKAGE
+	chown www-data:www-data /etc/typo3-dummy/localconf.php
+	chmod 600 /etc/typo3-dummy/localconf.php
+
+	for webserver in apache apache-perl apache-ssl apache2; do
+		if [ -d /etc/$webserver/conf.d -a ! -f /etc/$webserver/conf.d/typo3-dummy.conf -a ! -h /etc/$webserver/conf.d/typo3-dummy.conf ]; then
+			ln -s /etc/typo3-dummy/apache.conf /etc/$webserver/conf.d/typo3-dummy.conf
+		fi
+	done
+
+fi
+
+#DEBHELPER#
+
+exit 0
