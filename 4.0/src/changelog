@@ -1,3 +1,17 @@
+typo3-src (4.0.7+debian-2) unstable; urgency=low
+
+  * t3lib/fonts/readme.txt is now patched by dpatch.
+  <NOT YET RELEASED!>
+
+ -- Christian Welzel <gawain@camlann.de>  Sat, 18 Aug 2007 21:00:00 +0100
+
+typo3-src (4.0.7+debian-1) unstable; urgency=low
+
+  * New upstream release.
+    - Several improvements to avoid security issues by 3rd party extensions.
+
+ -- Christian Welzel <gawain@camlann.de>  Wed, 18 Jul 2007 14:00:00 +0100
+
 typo3-src (4.0.6+debian-1) unstable; urgency=low
 
   * New upstream release.
