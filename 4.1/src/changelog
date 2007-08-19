@@ -9,6 +9,8 @@ typo3-src (4.1.2+debian-1) unstable; urgency=low
 
   * New upstream release.
     - Several improvements to avoid security issues by 3rd party extensions.
+  * Added linda overrides.
+  * Fixed some whitespaces in t3lib/fonts/readme.txt.
 
  -- Christian Welzel <gawain@camlann.de>  Wed, 18 Jul 2007 14:00:00 +0100
 

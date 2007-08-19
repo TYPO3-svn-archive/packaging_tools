@@ -26,7 +26,7 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
-	dh_installdirs -A $(T3SRCDIR)
+	dh_installdirs -A $(T3SRCDIR) usr/share/linda/overrides
 	dh_installdirs -p $(SOURCEPACKAGE) $(T3EXTDIR)
 	cp -r index.php misc t3lib typo3 $(SOURCEINSTALLDIR)
 	rm -f $(SOURCEINSTALLDIR)/typo3/LICENSE.txt
@@ -44,6 +44,8 @@ binary-indep: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
+	cp debian/typo3-src.linda debian/typo3-src-4.1/usr/share/linda/overrides/typo3-src
+	cp debian/typo3-src-4.1.linda debian/typo3-src-4.1/usr/share/linda/overrides/typo3-src-4.1
 	chown -hR root:www-data $(SOURCEINSTALLDIR)
 	dh_installdeb
 	dh_shlibdeps
