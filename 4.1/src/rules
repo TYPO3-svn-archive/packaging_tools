@@ -21,6 +21,7 @@ clean: unpatch
 	dh_testdir
 	dh_testroot
 	dh_clean
+	rm -f $(SOURCEINSTALLDIR)/t3lib/fonts/nimbus.sfd.gz
 
 install: build
 	dh_testdir
@@ -29,6 +30,7 @@ install: build
 	dh_installdirs -A $(T3SRCDIR) usr/share/linda/overrides
 	dh_installdirs -p $(SOURCEPACKAGE) $(T3EXTDIR)
 	cp -r index.php misc t3lib typo3 $(SOURCEINSTALLDIR)
+	perl -ne 'print(unpack "u", $$_);' debian/nimbus.sfd.gz.uuencoded > $(SOURCEINSTALLDIR)/t3lib/fonts/nimbus.sfd.gz
 	rm -f $(SOURCEINSTALLDIR)/typo3/LICENSE.txt
 	rm -f $(SOURCEINSTALLDIR)/typo3/sysext/rtehtmlarea/htmlarea/HTMLAREA_LICENSE.txt
 	rm -f $(SOURCEINSTALLDIR)/typo3/sysext/adodb/adodb/license.txt
@@ -44,8 +46,8 @@ binary-indep: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
-	cp debian/typo3-src.linda debian/typo3-src-4.1/usr/share/linda/overrides/typo3-src
-	cp debian/typo3-src-4.1.linda debian/typo3-src-4.1/usr/share/linda/overrides/typo3-src-4.1
+	cp debian/typo3-src.linda debian/$(SOURCEPACKAGE)/usr/share/linda/overrides/typo3-src
+	cp debian/$(SOURCEPACKAGE).linda debian/$(SOURCEPACKAGE)/usr/share/linda/overrides/$(SOURCEPACKAGE)
 	chown -hR root:www-data $(SOURCEINSTALLDIR)
 	dh_installdeb
 	dh_shlibdeps
