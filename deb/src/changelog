@@ -1,6 +1,10 @@
 typo3-src (4.1.2+debian-2) unstable; urgency=low
 
   * t3lib/fonts/readme.txt is now patched by dpatch.
+  * nimbus.sfd.gz added to debian diff (perl encoded).
+  * copying of linda overides slightly changed.
+  * added watch file.
+  <NOT YET RELEASED!>
 
  -- Christian Welzel <gawain@camlann.de>  Sat, 18 Aug 2007 21:00:00 +0100
 
