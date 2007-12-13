@@ -1,11 +1,12 @@
-typo3-src (4.0.7-3) unstable; urgency=low
+typo3-src (4.0.8-1) unstable; urgency=low
 
+  * New upstream release.
+    - Fixes a low-severity SQL injection in the modfunc2 of indexed_search
   * t3lib/fonts/readme.txt is now patched by dpatch.
   * nimbus.sfd.gz added to debian diff (perl encoded).
   * Added linda overrides.
-  <NOT YET RELEASED!>
 
- -- Christian Welzel <gawain@camlann.de>  Sat, 18 Aug 2007 21:00:00 +0100
+ -- Christian Welzel <gawain@camlann.de>  Sat, 13 Dec 2007 21:00:00 +0100
 
 typo3-src (4.0.7+debian-1) unstable; urgency=low
 
