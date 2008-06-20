@@ -1,9 +1,23 @@
+typo3-src (4.1.7-1) unstable; urgency=high
+
+  [ Christian Welzel ]
+  * New upstream release
+    - fixes TYPO3-20080611-1: Multiple vulnerabilities in TYPO3 Core 
+      (Closes: #485814)  
+
+  [ Holger Levsen ]
+  * Change recommends from gs to ghostscript.
+  * Remove obsolete overrides for linda, which is obsolete itself. 
+  * Fix spelling error in description. 
+
+ -- Christian Welzel <gawain@camlann.de>  Wed, 11 Jun 2008 15:00:00 +0100
+
 typo3-src (4.1.6-1) unstable; urgency=low
 
   * New upstream release.
   * Dependency changed from ttf-bitstream-vera to ttf-dejavu (Closes: 461294)
 
- -- Christian Welzel <gawain@camlann.de>  Sun, 09 Mar 2007 10:00:00 +0100
+ -- Christian Welzel <gawain@camlann.de>  Sun, 09 Mar 2008 10:00:00 +0100
 
 typo3-src (4.1.5-1) unstable; urgency=medium
 
