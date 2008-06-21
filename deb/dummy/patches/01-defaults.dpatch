@@ -7,7 +7,7 @@
 
 --- typo3-dummy-4.0.2.orig/typo3conf/localconf.php	2006-09-11 09:18:23.000000000 +0200
 +++ typo3-dummy-4.0.2/typo3conf/localconf.php	2006-09-23 18:30:33.072210250 +0200
-@@ -10,4 +10,72 @@
+@@ -10,4 +10,74 @@
  
  ## INSTALL SCRIPT EDIT POINT TOKEN - all lines after this points may be changed by the install script!
  
@@ -15,7 +15,9 @@
 \ Kein Zeilenumbruch am Dateiende.
 +// If safe_mode is activated with TYPO3, disable use of
 +// external programs
-+$TYPO3_CONF_VARS["BE"]["disable_exec_function"] = '1';
++// typo3-dummy provides links to the most important external programs in
++// /var/lib/typo3-dummy/execdir, so exec() function is enabled by default.
++$TYPO3_CONF_VARS["BE"]["disable_exec_function"] = '0';
 +
 +// TYPO3 prefers the use of GIF-files and most likely your visitors on
 +// your website does too as not all browsers support PNG yet.

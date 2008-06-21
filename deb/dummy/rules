@@ -8,7 +8,7 @@ include /usr/share/dpatch/dpatch.make
 SHORTNAME=dummy
 PACKAGENAME=typo3-$(SHORTNAME)
 # set link to the typo3 source dir
-T3PACKAGENAME=typo3_src-4.1
+T3PACKAGENAME=typo3_src-4.2
 
 INSTALLDIR=debian/$(PACKAGENAME)
 DBSRCDIR=usr/share/$(PACKAGENAME)

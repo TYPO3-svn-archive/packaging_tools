@@ -3,11 +3,11 @@ Section: web
 Priority: optional
 Maintainer: Christian Welzel <gawain@camlann.de>
 Build-Depends: debhelper (>= 4), dpatch
-Standards-Version: 3.7.2
+Standards-Version: 3.8.0
 
 Package: typo3-dummy
 Architecture: all
-Depends: typo3-src-4.0 | typo3-src-4.1
+Depends: typo3-src-4.2
 Description: Empty TYPO3 site package for starting a new site from scratch
  This package provides an empty directory structure to start a new and clean
  website based on TYPO3. This includes a default configuration and some scripts
