@@ -1,3 +1,15 @@
+typo3-src (4.2.1-3) unstable; urgency=low
+
+  * Fixed versioned dependency on libjs-prototype
+
+ -- Christian Welzel <gawain@camlann.de>  Wed, 25 Jun 2008 20:00:00 +0100
+
+typo3-src (4.2.1-2) unstable; urgency=low
+
+  * Moved libjs-prototype from Recommends-field do Depends-field.
+
+ -- Christian Welzel <gawain@camlann.de>  Sun, 22 Jun 2008 11:00:00 +0100
+
 typo3-src (4.2.1-1) unstable; urgency=low
 
   * New upstream release.
@@ -6,8 +18,6 @@ typo3-src (4.2.1-1) unstable; urgency=low
   * some fixes to debian/rules
   * Depend on libjs-prototype for prototype.js (Closes: 475282)
   * Raised stardards version to 3.8.0
-  * Added copyright information of typo3/sysext/t3editor and
-    typo3/sysext/t3editor/jslib/codemirror to debian/copyright
 
  -- Christian Welzel <gawain@camlann.de>  Fri, 20 Jun 2008 22:00:00 +0100
 
